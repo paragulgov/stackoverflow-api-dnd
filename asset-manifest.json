@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/stackoverflow-api-dnd/static/css/main.aa744ca9.css",
-    "main.js": "/stackoverflow-api-dnd/static/js/main.d22a28c4.js",
+    "main.css": "/stackoverflow-api-dnd/static/css/main.86d7b459.css",
+    "main.js": "/stackoverflow-api-dnd/static/js/main.7e47e799.js",
     "static/media/Caveat-Regular.ttf": "/stackoverflow-api-dnd/static/media/Caveat-Regular.1f129497cd349562c266.ttf",
     "index.html": "/stackoverflow-api-dnd/index.html",
-    "main.aa744ca9.css.map": "/stackoverflow-api-dnd/static/css/main.aa744ca9.css.map",
-    "main.d22a28c4.js.map": "/stackoverflow-api-dnd/static/js/main.d22a28c4.js.map"
+    "main.86d7b459.css.map": "/stackoverflow-api-dnd/static/css/main.86d7b459.css.map",
+    "main.7e47e799.js.map": "/stackoverflow-api-dnd/static/js/main.7e47e799.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa744ca9.css",
-    "static/js/main.d22a28c4.js"
+    "static/css/main.86d7b459.css",
+    "static/js/main.7e47e799.js"
   ]
 }
