@@ -35,6 +35,7 @@ const questionsSlice = createSlice({
     questionsList: [] as IQuestion[],
     currentDragQuestion: null as null | IQuestion,
     fromDate: 1514764800000,
+    oldDate: 1514764800000
   },
   reducers: {
     setCurrentDragQuestion: (state, action: PayloadAction<number>) => {
@@ -70,11 +71,15 @@ const questionsSlice = createSlice({
         q.question_id === action.payload ? ({ ...q, score: q.score - 1 }) : q
       ));
     },
+    setDate: (state, action) => {
+      state.fromDate = action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(fetchQuestions.fulfilled, (state, { payload }) => {
       state.questionsList = payload.response?.items?.map((item: any, index: number) => ({ ...item, order: index }));
       if (payload.date) {
+        state.oldDate = payload.date;
         state.fromDate = payload.date;
       }
     });
@@ -86,6 +91,7 @@ export const {
   setCurrentDragQuestion,
   incrementScore,
   decrementScore,
+  setDate
 } = questionsSlice.actions;
 
 export const selectQuestions = (state: RootState) => {

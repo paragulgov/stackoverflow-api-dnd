@@ -6,6 +6,7 @@ import {
   fetchQuestions,
   selectQuestions,
   setCurrentDragQuestion,
+  setDate,
   swapQuestions,
 } from '../../redux/questions/questionsSlice';
 
@@ -15,6 +16,7 @@ const QuestionsList = () => {
   const dispatch = useAppDispatch();
 
   const date = useAppSelector(state => state.questionsSlice.fromDate)
+  const oldDate = useAppSelector(state => state.questionsSlice.oldDate)
   const questions = useAppSelector(selectQuestions);
   const copyQuestions = [...questions];
 
@@ -40,8 +42,12 @@ const QuestionsList = () => {
     const value = e.currentTarget.value;
     const date = new Date(value).getTime();
 
-    dispatch(fetchQuestions(date))
+    dispatch(setDate(date))
   };
+
+  const handleSearchSubmit = () => {
+    dispatch(fetchQuestions(date))
+  }
 
   // Renders
   return (
@@ -56,6 +62,7 @@ const QuestionsList = () => {
           onChange={handleChangeDate}
           value={new Date(date).toLocaleDateString('en-CA')}
         />
+        {oldDate !== date && <button onClick={handleSearchSubmit}>Поиск</button>}
       </div>
       {copyQuestions.map(q => (
         <Accordion
