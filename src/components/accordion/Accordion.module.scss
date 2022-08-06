@@ -1,0 +1,50 @@
+.root {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px;
+
+  .viewed {
+    font-family: Caveat, cursive;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .question {
+      margin-right: 24px;
+      font-size: 32px;
+    }
+
+    .score {
+      font-size: 24px;
+      margin-right: 24px;
+    }
+
+    .buttonsGroup {
+      display: flex;
+      flex-direction: column;
+
+      button {
+        background: inherit;
+        border: 1px solid gray;
+        cursor: pointer;
+
+        &:hover {
+          background: darkgrey;
+          transition: background 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .closed {
+    font-family: Caveat, cursive;
+    font-size: 32px;
+
+    border-top: 1px solid gray;
+  }
+}
+
+.isAnswered {
+  background: lightgreen;
+}
